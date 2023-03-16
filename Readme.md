@@ -45,8 +45,10 @@ To extract the data you can use any software suppoorting encrypted zip files. Fo
 You can use the example Jupyter Notebook script that shows differences between training and test data.
 
 Using Python is not required but encouraged. If you aren't familiar with Python or Jupyter Notebooks, we recommend the following tutorials covering the installation and use of those tools:
-- Python tutorial
-- Jupyter tutorial
+- Python tutorials - https://programming-23.mooc.fi/, https://www.youtube.com/@coreyms/playlists
+- Jupyter & Colab tutorials 
+    - Jupyter - https://www.youtube.com/watch?v=HW29067qVWk, https://www.youtube.com/playlist?list=PL1m-6MPBNAZfF-El7BzqaOrCrTBRgH1Nk
+    - Colab - https://www.youtube.com/playlist?list=PLA83b1JHN4ly56Y7o6vDAT8Szxc3_EdRH
 
 
 ## 6. Requirements and submission procedure
