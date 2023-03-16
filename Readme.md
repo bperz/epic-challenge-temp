@@ -39,22 +39,20 @@ Similarly to the first scenario, this scenario analyzes how well a model perform
 In each scenario you will find train and test data sets. You can further divide the train set into train and validation sets, if you find it reasonable.
 In the test set, the length of the physiology is 20 seconds longer than the length of the self-annotation part (ground truth). This is to allow building models that utilizes time windows of up to 20 seconds long – 10 seconds of physiology before and 10 seconds after the annotation timestamp. Please note, this is your sole decision what architecture, which physiological signals, which features, what window size, to use.
 
+Data files in test sets have columns and timestamps defined, but no data. Your taks is to predict arousal and valence levels for all timestamps. You can use these data files as a template that you need to fill with values produced by your solution.  
+
 To extract the data you can use any software suppoorting encrypted zip files. For Windows operating system we recommend 7-Zip.
 
-## 5. Example code
-You can use the example Jupyter Notebook script that shows differences between training and test data.
-
-Using Python is not required but encouraged. If you aren't familiar with Python or Jupyter Notebooks, we recommend the following tutorials covering the installation and use of those tools:
-- Python tutorials - https://programming-23.mooc.fi/, https://www.youtube.com/@coreyms/playlists
-- Jupyter & Colab tutorials 
-    - Jupyter - https://www.youtube.com/watch?v=HW29067qVWk, https://www.youtube.com/playlist?list=PL1m-6MPBNAZfF-El7BzqaOrCrTBRgH1Nk
-    - Colab - https://www.youtube.com/playlist?list=PLA83b1JHN4ly56Y7o6vDAT8Szxc3_EdRH
-
+For a more visual explanation of how the dataset is constructed and organized, you can see the attached example notebook `explain_data.ipynb`. It shows how to load data, what loaded files look like, and what do plotted data look like. 
 
 ## 6. Requirements and submission procedure
+
 TBD
 -no cheating
 -clean code, comments
 -easy to recreate
 -performance measure
 -how to prepare solution files, especially in scenarios with folds - naming convention, format, zipped or not, etc.
+
+## 7. Additional information and materials
+Using Python is not required but we strongly encourage it.
