@@ -11,16 +11,22 @@ Your task is to predict continuous values of valence and arousal based on the av
 ## 3. Experiment description
 Some details on the experiments were concealed in order to avoid bias. All information will be disclosed after the competition resolution.
 
-We use data from the experiment on emotion annotation conducted in laboratory conditions. Study participants watched emotional stimuli and annotated their emotions continuously in arousal-valence space. During the experiment, the following physiological signals were recorded:
-- blood volume pulse (bvp)
-- electrocardiogram - 1 electrode (ecg)
-- electromyograms from three muscles:
+We use data from the experiment on emotion annotation conducted in laboratory conditions. Study participants watched emotional stimuli and annotated their emotions continuously in arousal-valence space. During the experiment, the following physiological activity was measured:
+
+- Cardiac activity:
+	- with photoplethysmography (bvp)
+	- with electrocardiograph (ecg)
+
+- Muscle activity:
 	- corrugator supercilii (emg_coru)
 	- trapezius (emg_trap)
 	- zygomaticus major (emg_zygo)
-- electrodermal activity / galvanic skin response (gsr)
-- respiration rate (rsp)
-- skin temperature (skt)
+
+- Electrodermal activity (gsr)
+
+- Respiration trace (rsp)
+
+- Skin Temperature (skt)
 
 All physiological signals were recorded with the sampling frequency of 1kHz, and annotations were recorded with the frequency of 20Hz.
 
