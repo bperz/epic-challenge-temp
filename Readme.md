@@ -31,7 +31,7 @@ We use data from the experiment on emotion annotation conducted in laboratory co
 All physiological signals were recorded with the sampling frequency of 1kHz, and annotations were recorded with the frequency of 20Hz.
 
 ## 4. Data structure
-All the data is stored in `releases` section of the repository. Data is divided into four scenarios, each representing a different validation approach:
+All the data is stored in `releases` section of the repository (on github website it should appear to the right of this text). Data is divided into four scenarios, each representing a different validation approach:
 1. Across-time scenario corresponds to the hold-out validation approach that respects chronology. Each sample is divided into training and test parts based on the time. A sample represents a single person watching a single video - first part of the activity is in the train set and the later part in the test set.
 This scenario analyzes how well a model utilizes knowledge obtained from the past data to the new data from the same set of participants and stimuli.
 2. Across-subject scenario matches the leave-N-subjects-out validation approach. Participants are divided into random groups. All the samples of a given group of participants belong either to the train or test set, depending on the fold. There are 5 folds in this scenario and each fold leaves out a different set of subjects.
@@ -43,13 +43,13 @@ This scenario validates how well models trained on one version of the quadrants 
 Similarly to the first scenario, this scenario analyzes how well a model performs for the same set of participants and a similar task.
 
 In each scenario you will find train and test data sets. You can further divide the train set into train and validation sets, if you find it reasonable.
-In the test set, the length of the physiology is 20 seconds longer than the length of the self-annotation part (ground truth). This is to allow building models that utilizes time windows of up to 20 seconds long – 10 seconds of physiology before and 10 seconds after the annotation timestamp. Please note, this is your sole decision what architecture, which physiological signals, which features, what window size, to use.
+In the test set, the length of the physiology is 20 seconds longer than the length of the self-annotation part (ground truth). This is to allow building models that utilize time windows of up to 20 seconds long – 10 seconds of physiology before and 10 seconds after the annotation timestamp. Please note, this is your sole decision what architecture, which physiological signals, which features, what window size, to use.
 
-Data files in test sets have columns and timestamps defined, but no data. Your taks is to predict arousal and valence levels for all timestamps. You can use these data files as a template that you need to fill with values produced by your solution.  
+Data files in test sets have columns (arousal and valence) and timestamps defined. Your taks is to predict arousal and valence levels for all of the provided timestamps. You can use the files as a template that you have to fill with predictions produced by your solution.
 
-To extract the data you can use any software suppoorting encrypted zip files. For Windows operating system we recommend 7-Zip.
+To extract the data you can use any software supporting encrypted zip files. For Windows operating system we recommend 7-Zip.
 
-For a more visual explanation of how the dataset is constructed and organized, you can see the attached example notebook `explain_data.ipynb`. It shows how to load data, what loaded files look like, and what do plotted data look like. 
+For a more visual explanation of how the dataset is constructed and organized, you can see the attached example notebook `explain_data.ipynb`. It shows how to load data, and what do data look like when stored in memory and plotted. 
 
 ## 6. Requirements and submission procedure
 
