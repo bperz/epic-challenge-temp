@@ -1,3 +1,4 @@
+# Temporary repository for the
 # EPiC 2023: The Emotion Physiology and Experience Collaboration
 
 This repository contains data, information, and helpful code for the EPiC 2023 competition.
@@ -17,20 +18,20 @@ The data are from an experiment conducted in a laboratory setting. Study partici
 
 Simultaneously, the following physiological signals were sampled at 1kHz:
 
-*Cardiac activity:*
+*Cardiac activity*
 - Photoplethysmography (bvp) signal was captured with a sensor placed on the middle finger of participants’ non-dominant hand.
 - Electrocardiography (ecg) signal was captured using pre-gelled electrodes placed on the participants’ chests in a triangular configuration.
 
-*Muscle activity:*
+*Muscle activity*
 - Muscle activity for the corrugator supercilii (emg_coru), trapezius (emg_trap), and zygomaticus major (emg_zygo) was captured using standard configurations of electromyography sensors.
 
-*Electrodermal activity (gsr):*
+*Electrodermal activity (gsr)*
 - Variation in electrical conductance resulting from sweat released by skin glands was measured with GSR sensors placed on the index and ring fingers of participants’ non-dominant hand.
 
-*Respiration trace (rsp):*
+*Respiration trace (rsp)*
 - Respiration was measured with a piezo-electric belt attached under the armpits and above the breasts.
 
-*Skin Temperature (skt):*
+*Skin Temperature (skt)*
 - Variation in skin temperature was measured with an epoxy rod thermistor attached to the pinky finger of participants’ non-dominant hand. 
 
 
@@ -39,24 +40,24 @@ All the data is stored in [releases](https://github.com/bperz/epic-challenge-tem
 
 Data are divided into four scenarios, each representing a different validation approach. Every scenario contains a train and test set with physiological measures and ground truth annotations. There is a CSV file per data sample (one subject watching one video) with the filename sub_X_vid_Y.csv where X and Y are the IDs of the participant and video, respectively.
 
-1. **Across-time scenario** corresponds to the hold-out validation approach that respects chronology. Each sample is divided into training and test parts based on time. A sample represents a single person watching a single video. The earlier parts of the video are in the training set, and the later parts are in the test set.
+1. **Across-time scenario** corresponds to the *hold-out* validation approach that respects chronology. Each sample is divided into training and test parts based on time. A sample represents a single person watching a single video. The earlier parts of the video are in the training set, and the later parts are in the test set.
 
 	This scenario examines how well a model utilizes knowledge obtained from past data to make predictions about new data collected from the same set of participants and emotional context.
 
 
 
-2. **Across-subject scenario** matches the leave-N-subjects-out validation approach. Participants are divided into random groups. All the samples of a given group of participants belong either to the train or test set, depending on the fold. There are 5 folds in this scenario, and each fold leaves out a different set of subjects.
+2. **Across-subject scenario** matches the *leave-N-subjects-out* validation approach. Participants are divided into random groups. All the samples of a given group of participants belong either to the train or test set, depending on the fold. There are 5 folds in this scenario, and each fold leaves out a different set of subjects.
 
 	This scenario examines a model’s ability to generalize knowledge obtained from a group of people to a different, previously unseen, group of people.
 
 
 
-3. **Across-elicitor scenario** follows the leave-one-stimuli-out validation approach. For every subject there are two samples (videos) per each quadrant in the arousal-valence space. In each fold both samples related to a given quadrant are excluded, resulting in 4 folds, each excluding one arousal-valence quadrant.
+3. **Across-elicitor scenario** follows the *leave-one-stimuli-out* validation approach. For every subject there are two samples (videos) per each quadrant in the arousal-valence space. In each fold both samples related to a given quadrant are excluded, resulting in 4 folds, each excluding one arousal-valence quadrant.
 
 	This scenario examines how well models trained on three arousal-valence quadrants (e.g., high arousal, high positivity; high arousal, high negativity; low arousal, high positivity) can infer states experienced in the fourth quadrant (e.g., low arousal, high negativity). In other words, it examines how well a model trained on specific emotional states can generalize to a different, previously unseen, set of emotional states. 
 
 
-4. **Across-version scenario** resembles the hold-out validation approach that doesn’t necessarily respect chronology. For every subject there are two samples (videos) per each quadrant in the arousal-valence space. In this scenario, one sample is used to train the model, and the other sample is used to test the model. Thus, this scenario has 2 folds.
+4. **Across-version scenario** resembles the *hold-out* validation approach that doesn’t necessarily respect chronology. For every subject there are two samples (videos) per each quadrant in the arousal-valence space. In this scenario, one sample is used to train the model, and the other sample is used to test the model. Thus, this scenario has 2 folds.
 
 	This scenario examines how well models trained on one specific instantiation of an emotional state can generalize to different inductions of that same emotional state. Similar to the first scenario, the same set of participants are used for training and testing.
 
@@ -93,7 +94,7 @@ For a more visual explanation of how the dataset is constructed and organized, y
 	- **A short readme** introducing the team, explaining your approach, and describing the repository content and how to run the code. 
 	- You can create a public repository, or send us an invitation to the private one. You should use a [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
 
-- Repositories will be cloned on 1 May 2023 10 am PT into a single meta-repository with one branch per team. This meta-repository will be made publicly available.
+- Repositories will be cloned on **1 May 2023 10 am PT** into a single meta-repository with one branch per team. This meta-repository will be made publicly available.
 
 - We will utilize the RMSE metric to assess the model performance. The final result will be obtained by calculating the mean score on all scenarios and dimensions (valence and arousal). The performance in each scenario will be assessed by mean RMSE in each fold.
 
